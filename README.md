@@ -18,7 +18,7 @@ This repository gets loaded when you load PharoEDA itself.
 However, you can load it manually with Metacello:
 
 ```smalltalk
-Metacello new repository: 'github://osoco/pharo-eda-errors:main'; baseline: #PharoEDAErrors; load
+Metacello new repository: 'github://rydnr/pharo-eda-errors:main'; baseline: #PharoEDAErrors; load
 ```
 
 ## Credits
