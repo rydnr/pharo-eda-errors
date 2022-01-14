@@ -29,13 +29,13 @@ task retrieveFreshGtoolkitImage(type: RetrieveFreshGtoolkitImageTask, dependsOn:
 task loadPharoEDAAdapters(type: EvalSmalltalkExpressionTask, dependsOn: downloadFreshPharoImage) {
     pharoPath = customPharoPath
     commonPharoArgs = customPharoArgs
-    expression = "Metacello new repository: 'github://osoco/pharo-eda-adapters:${branchOrTag}'; baseline: 'PharoEDAAdapters'; onConflictUseLoaded; load"
+    expression = "Metacello new repository: 'github://rydnr/pharo-eda-adapters:${branchOrTag}'; baseline: 'PharoEDAAdapters'; onConflictUseLoaded; load"
 }
 
 task loadPharoEDAAdaptersGt(type: EvalSmalltalkExpressionTask, dependsOn: retrieveFreshGtoolkitImage) {
     pharoPath = customPharoPath
     commonPharoArgs = customPharoArgs
-    expression = "Metacello new repository: 'github://osoco/pharo-eda-adapters:${branchOrTag}'; baseline: 'PharoEDAAdapters'; onConflictUseLoaded; load"
+    expression = "Metacello new repository: 'github://rydnr/pharo-eda-adapters:${branchOrTag}'; baseline: 'PharoEDAAdapters'; onConflictUseLoaded; load"
 }
 
 task customizeImage(type: RunSmalltalkScriptTask, dependsOn: loadPharoEDAAdapters) {
