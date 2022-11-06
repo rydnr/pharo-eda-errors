@@ -1,3 +1,16 @@
+"
+**Class**
+
+I'm a baseline to load PharoEDA Errors.
+
+**Responsibilities**
+
+Guide Metacello to load PharoEDA-Errors with its dependencies.
+
+**Collaborators**
+
+Metacello
+"
 Class {
 	#name : #BaselineOfPharoEDAErrors,
 	#superclass : #BaselineOf,
@@ -38,4 +51,15 @@ BaselineOfPharoEDAErrors >> includePharoEDACommon: spec [
 		with: [ spec repository: 'github://rydnr/pharo-eda-common:main' ].
 	^ spec
 
+]
+
+{ #category : #hooks }
+BaselineOfPharoEDAErrors >> postload: loader package: packageSpec [
+
+	| location |
+	location := (IceRepository registry detect: [ :each | 
+		             each name = 'pharo-eda-errors' ]) location.
+	EDAIconProvider addDefaultLocation: location / 'resources' / 'icons'.
+	EDACTranslationProvider addDefaultLocation:
+		location / 'resources' / 'l10n'
 ]
