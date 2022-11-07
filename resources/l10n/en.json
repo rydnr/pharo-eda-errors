@@ -1,0 +1,20 @@
+{
+  "pharoeda": {
+    "errors": {
+      "strategies": {
+        "justlog": {
+          "description": "Just log errors"
+        },
+        "launchdebugger": {
+          "description": "Launch debugger"
+        },
+        "publishmessage": {
+          "description": "Publish an error message"
+        },
+        "throwerror": {
+          "description": "Throw error"
+        }
+      }
+    }
+  }
+}
