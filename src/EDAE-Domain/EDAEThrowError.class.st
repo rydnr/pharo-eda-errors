@@ -66,11 +66,6 @@ EDAEThrowError class >> shouldPersistFuel [
 	^ false
 ]
 
-{ #category : #accessing }
-EDAEThrowError >> description [
-	^ self class description
-]
-
 { #category : #'error handling' }
 EDAEThrowError >> handleError: error withExtraContextInformation: aDictionary [
 	"Handles the error"

@@ -26,7 +26,7 @@ Class {
 
 { #category : #accessing }
 EDAEPublishMessageErrorStrategy class >> description [
-	^ 'Publish an error message'
+	^ #'pharoeda.errors.strategies.publishmessage.description'
 ]
 
 { #category : #accessing }
@@ -37,11 +37,6 @@ EDAEPublishMessageErrorStrategy class >> topicPublisher [
 { #category : #accessing }
 EDAEPublishMessageErrorStrategy class >> topicPublisher: aTopicPublisher [
 	topicPublisher := aTopicPublisher
-]
-
-{ #category : #accessing }
-EDAEPublishMessageErrorStrategy >> description [
-	^ 'Errors published as messages'
 ]
 
 { #category : #'error handling' }

@@ -21,7 +21,7 @@ Class {
 	#classInstVars : [
 		'errors'
 	],
-	#category : 'EDAE-Domain-Strategies'
+	#category : #'EDAE-Domain-Strategies'
 }
 
 { #category : #accessing }
@@ -47,11 +47,6 @@ EDAELaunchDebuggerErrorStrategy class >> errors: aCollection [
 { #category : #'class initialization' }
 EDAELaunchDebuggerErrorStrategy class >> initialize [
 	self errors: OrderedCollection new
-]
-
-{ #category : #'error handling' }
-EDAELaunchDebuggerErrorStrategy >> description [
-	^ 'Launch debugger'
 ]
 
 { #category : #'error handling' }

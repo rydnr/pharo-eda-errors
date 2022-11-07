@@ -27,7 +27,7 @@ Class {
 
 { #category : #accessing }
 EDAEJustLogErrorStrategy class >> description [
-	^ 'Just log error'
+	^ #'pharoeda.errors.strategies.justlog.description'
 ]
 
 { #category : #logging }
@@ -83,11 +83,6 @@ EDAEJustLogErrorStrategy class >> logWarningMessage: aMessage beautify: aBoolean
 { #category : #accessing }
 EDAEJustLogErrorStrategy class >> shouldPersistFuel [
 	^ false
-]
-
-{ #category : #accessing }
-EDAEJustLogErrorStrategy >> description [
-	^ 'Just log error'
 ]
 
 { #category : #'error handling' }

@@ -55,9 +55,8 @@ EDAEErrorHandlingStrategy >> context: ctx [
 
 { #category : #accessing }
 EDAEErrorHandlingStrategy >> description [
-	"The strategy description"
-	self subclassResponsibility.
-	^ self
+
+	^ self class description
 ]
 
 { #category : #'error handling' }
