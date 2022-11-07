@@ -31,7 +31,7 @@ EDAELaunchDebuggerErrorStrategy class >> annotateError: anError [
 
 { #category : #accessing }
 EDAELaunchDebuggerErrorStrategy class >> description [
-	^ 'Launch debugger'
+	^ #'pharoeda.errors.strategies.launchdebugger.description'
 ]
 
 { #category : #accessing }
