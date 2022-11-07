@@ -8,7 +8,8 @@ Class {
 
 { #category : #accessing }
 EDAEThrowError class >> description [
-	^ 'Throw error'
+
+	^ #'pharoeda.errors.strategies.throwerror.description'
 ]
 
 { #category : #logging }
