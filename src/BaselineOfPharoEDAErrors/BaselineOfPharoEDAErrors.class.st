@@ -17,20 +17,8 @@ Class {
 	#category : #BaselineOfPharoEDAErrors
 }
 
-{ #category : #baselines }
-BaselineOfPharoEDAErrors >> baseline: spec [
-
-	<baseline>
-	spec for: #common do: [ 
-		spec blessing: #baseline.
-		spec postLoadDoIt: #'postload:package:'.
-		self includePharoEDACommon: spec.
-		self declarePackagesIn: spec.
-		self declareGroupsIn: spec ]
-]
-
 { #category : #meta }
-BaselineOfPharoEDAErrors >> declareGroupsIn: spec [
+BaselineOfPharoEDAErrors class >> declareGroupsIn: spec [
 	spec
 		group: 'core'
 			with:
@@ -39,19 +27,31 @@ BaselineOfPharoEDAErrors >> declareGroupsIn: spec [
 ]
 
 { #category : #meta }
-BaselineOfPharoEDAErrors >> declarePackagesIn: spec [
+BaselineOfPharoEDAErrors class >> declarePackagesIn: spec [
 	spec
 		package: #'EDAE-Domain'
 			with: [ spec requires: #('PharoEDACommon') ]
 ]
 
 { #category : #dependencies }
-BaselineOfPharoEDAErrors >> includePharoEDACommon: spec [
+BaselineOfPharoEDAErrors class >> includePharoEDACommon: spec [
 	spec
 		baseline: 'PharoEDACommon'
 		with: [ spec repository: 'github://rydnr/pharo-eda-common:main' ].
 	^ spec
 
+]
+
+{ #category : #baselines }
+BaselineOfPharoEDAErrors >> baseline: spec [
+
+	<baseline>
+	spec for: #common do: [ 
+		spec blessing: #baseline.
+		spec postLoadDoIt: #postload:package:.
+		self class includePharoEDACommon: spec;
+		 declarePackagesIn: spec;
+		 declareGroupsIn: spec ]
 ]
 
 { #category : #hooks }
