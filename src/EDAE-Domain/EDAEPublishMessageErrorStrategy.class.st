@@ -41,10 +41,12 @@ EDAEPublishMessageErrorStrategy class >> topicPublisher: aTopicPublisher [
 
 { #category : #'error handling' }
 EDAEPublishMessageErrorStrategy >> handleError: anError withExtraContextInformation: aDictionary [
+
+	<todo: 'access to the edaApplication somehow'>
 	| serializer message |
 	serializer := EDAEJsonErrorSerializer
-		withContext: thisContext clone
-		andExtraContextInformation: aDictionary.
+		              withContext: thisContext clone
+		              andExtraContextInformation: aDictionary.
 	message := serializer serialize: anError greaseString.
 	EDAAEventStompTopicPublisher new publishError: message
 ]
