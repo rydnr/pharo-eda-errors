@@ -57,10 +57,16 @@ BaselineOfPharoEDAErrors >> baseline: spec [
 { #category : #hooks }
 BaselineOfPharoEDAErrors >> postload: loader package: packageSpec [
 
-	| location |
-	location := (IceRepository registry detect: [ :each | 
-		             each name = 'pharo-eda-errors' ]) location.
-	EDACIconProvider addDefaultLocation: location / 'resources' / 'icons'.
-	EDACTranslationProvider addDefaultLocation:
-		location / 'resources' / 'l10n'
+	Locale localeID: 'es'.
+	(IceRepository registry
+		 detect: [ :each | each name = 'pharo-eda-errors' ]
+		 ifNone: nil) ifNotNil: [ :repo |
+		| location |
+		location := repo location.
+		EDACIconProvider addDefaultLocation:
+			location / 'resources' / 'icons'.
+		EDACTranslationProvider addDefaultLocation:
+			location / 'resources' / 'l10n'.
+		NaturalLanguageTranslator current:
+			EDACCompositeTranslationProvider wrapCurrent ]
 ]
